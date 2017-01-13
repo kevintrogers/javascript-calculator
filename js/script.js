@@ -60,17 +60,30 @@ $(document).ready(function() {
   });
   performOperation = function(a, b, operation_type) {
     switch (operation_type) {
-      case 'add':
+      case '+':
         add(a,b);
         break;
-      case 'subtract':
+      case '-':
         add(a,b);
         break;
-      case 'divide':
+      case '&#247;':
         add(a,b);
         break;
-      case 'multiply':
+      case 'x':
         add(a,b);
+        break;
+      case 'C':
+        clear();
+        break;
+      case 'AC':
+        allClear();
+        break;
+      case '%':
+        percentage();
+        break;
+      case '&#177;':
+        plusMinus(temp);
+        displayCurrent()
         break;
     }
     displayCurrent();
