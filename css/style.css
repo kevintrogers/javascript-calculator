@@ -1,5 +1,5 @@
 body {
-  background: violet; }
+  background: #e1bee7; }
 
 .display-frame,
 #display {
@@ -8,18 +8,25 @@ body {
   margin-right: auto; }
 
 .calculator-body {
+  font-weight: 900;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  background: #f0f0f0;
-  padding-bottom: 1.5em; }
+  background: #cfcfcf;
+  padding-bottom: 1.5em;
+  border-radius: 20px;
+  border: 4px solid #202020; }
 
 input.btn {
+  color: #fff;
+  background: #6a1b9a;
+  border: 2px solid #202020;
+  border-radius: 15px;
   height: 5em;
-  width: 5em;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto; }
+  width: 5em; }
+
+input.btn:hover {
+  background: #e1bee7; }
 
 .tall-btn {
   height: 11.5em !important;
