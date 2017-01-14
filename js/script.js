@@ -19,8 +19,8 @@ $(document).ready(function() {
     temp = num1 / num2;
   };
   
-  plusMinus = function(thisNum) {
-    thisNum *= -1;
+  plusMinus = function() {
+    temp *= -1;
   };
   
   clear = function() {
@@ -49,8 +49,8 @@ $(document).ready(function() {
     var operation = $(this).val();
     if (firstNum === 0) {
     firstNum = temp;
-    temp = 0;
     displayCurrent();
+    temp = 0;
     } else {
       secondNum = temp;
       temp = 0;
@@ -64,13 +64,13 @@ $(document).ready(function() {
         add(a,b);
         break;
       case '-':
-        add(a,b);
+        subtract(a,b);
         break;
       case '&#247;':
-        add(a,b);
+        divide(a,b);
         break;
       case 'x':
-        add(a,b);
+        multiply(a,b);
         break;
       case 'C':
         clear();
@@ -83,11 +83,13 @@ $(document).ready(function() {
         break;
       case '&#177;':
         plusMinus(temp);
-        displayCurrent()
+        break;
+      case '=':
+        displayCurrent();
         break;
     }
     displayCurrent();
-    num1 = temp;
+    firstNum = temp;
   }
   
   displayCurrent = function() {
