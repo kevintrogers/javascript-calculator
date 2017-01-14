@@ -15,12 +15,15 @@ body {
   padding-bottom: 1.5em; }
 
 input.btn {
-  height: 4em;
-  width: 4em; }
+  height: 5em;
+  width: 5em;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto; }
 
 .tall-btn {
-  height: 9.5em !important;
-  margin-bottom: -5.5em; }
+  height: 11.5em !important;
+  margin-bottom: -6.5em; }
 
 .last-row {
-  margin-left: -4.5em; }
+  margin-left: -5.5em; }

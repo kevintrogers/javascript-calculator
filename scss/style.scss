@@ -1,6 +1,6 @@
 $background-color: violet;
 $body-color: #f0f0f0;
-$btn-size: 4em;
+$btn-size: 5em;
 $width: 66%;
 body {
   background: $background-color;
@@ -24,15 +24,17 @@ body {
 input.btn {
   height:$btn-size;
   width:$btn-size;
+  text-align:center;
+  margin-right: auto;
+  margin-left:auto;
   
 }
 .tall-btn {
-  height: 9.5em !important;
-  margin-bottom: -5.5em;
+  height: 11.5em !important;
+  margin-bottom: -6.5em;
 }
 .last-row {
-  margin-left: -4.5em;
+  margin-left: -5.5em;
 
   
 }
-display-frame {}

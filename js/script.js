@@ -21,7 +21,7 @@ $(document).ready(function() {
   
   plusMinus = function() {
     temp *= -1;
-  };
+   };
   
   clear = function() {
     total = 0;
