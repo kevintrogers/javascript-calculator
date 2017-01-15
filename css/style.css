@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Atomic+Age|Chewy|Coda|Kelly+Slab");
 body {
   background: #e1bee7; }
 
@@ -5,11 +6,20 @@ body {
 #display {
   width: 66%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  border-bottom: none; }
+
+#display {
+  margin-top: .5em;
+  font-size: 1.8em;
+  font-family: "Atomic Age";
+  background: #fff;
+  border: 3px solid #202020;
+  text-align: right;
+  padding-right: .5em; }
 
 .calculator-body {
   font-weight: 900;
-  width: 50%;
   margin-left: auto;
   margin-right: auto;
   background: #cfcfcf;
@@ -18,6 +28,7 @@ body {
   border: 4px solid #202020; }
 
 input.btn {
+  font-family: "Kelly Slab";
   color: #fff;
   background: #6a1b9a;
   border: 2px solid #202020;
