@@ -45,3 +45,8 @@ input.btn:hover {
 
 .last-row {
   margin-left: -5.5em; }
+
+@media screen and (min-width: 993px) {
+  .display-frame,
+  #display {
+    width: 80%; } }
