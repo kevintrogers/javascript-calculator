@@ -1,26 +1,26 @@
 $(document).ready(function() {
 
-  var add, subtract, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
-    firstNum, secondNum, total, displayTotal, displayCurrent, performOperation;
+  let add, subtract, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
+    firstNum, secondNum, total = 0, displayValue, performOperation;
 
   subtract = function(num1, num2) {
-    temp = num1 - num2;
+    return num1 - num2;
   };
   
-  add = function(num1, num2) {
-    temp = num1 + num2;
+  var add = function(num1, num2) {
+    return num1 + num2;
   };
   
   multiply = function(num1, num2) {
-    temp = num1 * num2;
+    return num1 * num2;
   };
   
   divide = function(num1, num2) {
-    temp = num1 / num2;
+    return num1 / num2;
   };
   
   plusMinus = function() {
-    temp *= -1;
+    return temp * -1;
    };
   
   clear = function() {
@@ -38,10 +38,10 @@ $(document).ready(function() {
   $('.int').click(function() {
     if (temp === 0) {
       temp = $(this).val().toString();
-      displayCurrent(temp);
+      displayValue(temp);
     } else {
       temp += $(this).val().toString();
-      displayCurrent();
+      displayValue(temp);
     }
   });
   
@@ -49,19 +49,19 @@ $(document).ready(function() {
     var operation = $(this).val();
     if (firstNum === 0) {
     firstNum = temp;
-    displayCurrent();
+    displayValue(temp);
     temp = 0;
     } else {
       secondNum = temp;
       temp = 0;
-      performOperation(num1, num2, operation);
+      performOperation(firstNum, secondNum, operation);
     }
     
   });
   performOperation = function(a, b, operation_type) {
     switch (operation_type) {
       case '+':
-        add(a,b);
+        total = add(a,b);
         break;
       case '-':
         subtract(a,b);
@@ -85,15 +85,15 @@ $(document).ready(function() {
         plusMinus(temp);
         break;
       case '=':
-        displayCurrent();
+        displayValue(total);
         break;
     }
-    displayCurrent();
-    firstNum = temp;
+
+    firstNum = total;
   }
   
-  displayCurrent = function() {
-    $('#display').val(temp);
+  displayValue = function(value) {
+    $('#display').val(value);
 
   };
 
