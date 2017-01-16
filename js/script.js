@@ -1,38 +1,42 @@
 $(document).ready(function() {
 
-  let add, subtract, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
-    firstNum, secondNum, total = 0, displayValue, performOperation;
+  let  subtract, add, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
+    firstNum = 0, secondNum = 0, total ='test', displayValue, performOperation;
 
   subtract = function(num1, num2) {
-    return num1 - num2;
+    total = Number(num1) - Number(num2);
+    return total;
   };
   
-  var add = function(num1, num2) {
-    return num1 + num2;
+  add = function(num1, num2) {
+    total = Number(num1) + Number(num2);
+    return total;
   };
   
   multiply = function(num1, num2) {
-    return num1 * num2;
+    total = (Number(num1)) * (Number(num2));
+    return total;
   };
   
   divide = function(num1, num2) {
-    return num1 / num2;
+    total = (Number(num1)) / (Number(num2));
+    return total;
   };
   
   plusMinus = function() {
-    return temp * -1;
+    total = Number(temp) * -1;
    };
   
   clear = function() {
     total = 0;
-    displayTotal(total);
+    displayValue(total);
   };
   
   allClear = function() {
     total = 0;
     firstNum = 0;
     secondNum = 0;
-    displayTotal(total);
+    displayValue(total);
   };
   
   $('.int').click(function() {
@@ -53,9 +57,10 @@ $(document).ready(function() {
     temp = 0;
     } else {
       secondNum = temp;
-      temp = 0;
+
       performOperation(firstNum, secondNum, operation);
     }
+    
     
   });
   performOperation = function(a, b, operation_type) {
@@ -88,7 +93,8 @@ $(document).ready(function() {
         displayValue(total);
         break;
     }
-
+    displayValue(total);
+    temp = 0;
     firstNum = total;
   }
   
