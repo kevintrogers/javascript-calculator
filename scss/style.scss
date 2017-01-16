@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Atomic+Age|Chewy|Coda|Kelly+Slab');
+@import url('https://fonts.googleapis.com/css?family=Coda|Kelly+Slab');
 
 $background-color: #e1bee7;
 $btn-color: #6a1b9a;
@@ -8,13 +8,16 @@ $border-color: #202020;
 $btn-size: 5em;
 $width: 75%;
 $largescreen-width: 80%;
-$display-font: 'Atomic Age';
+$display-font: 'Coda';
 $btn-font: 'Kelly Slab';
 
 body {
   background: $background-color;
 }
-
+h1{
+  font-family: 'Kelly Slab';
+  font-variant: small-caps;
+}
 .display-frame,
 #display {
   width: $width;
@@ -64,7 +67,7 @@ input.btn:hover {
   margin-bottom: -6.5em;
 }
 .last-row {
-  margin-left: -5.5em;
+  margin-left: -6.5em;
 }
 @media screen and (min-width: 993px) {
   .display-frame,
