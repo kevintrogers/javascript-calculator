@@ -25,6 +25,7 @@ $(document).ready(function() {
   
   plusMinus = function() {
     total = Number(temp) * -1;
+    displayValue(total.toString()) ;
    };
   
   clear = function() {
