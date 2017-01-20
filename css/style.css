@@ -4,7 +4,9 @@ body {
 
 h1 {
   font-family: 'Kelly Slab';
-  font-variant: small-caps; }
+  font-variant: small-caps;
+  color: #c62828;
+  text-shadow: 0 0 6px #ffc400; }
 
 .display-frame,
 #display {
