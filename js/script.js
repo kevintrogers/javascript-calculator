@@ -1,5 +1,5 @@
 $(document).ready(function() {
-//1-15-2017 calculator working RPN style
+
   let  subtract, add, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
     firstNum = 0, secondNum = 0, total, displayValue, storedOperator, performOperation;
 
