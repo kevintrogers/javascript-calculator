@@ -60,13 +60,15 @@ $(document).ready(function() {
     
     addNum();
   });
+
   
-  display.keypress(function() {
-    if (isNaN($(this).val())) {
-      displayValue(temp);
-    } else {
+  
+ display.keypress(function() {
+    if(display.val() === 0)
+    displayValue('');
+
       addNum();
-    }
+    
     //if value is operation
     //operation = operation value
     // operator press function

@@ -70,6 +70,15 @@ input.btn:hover, button.btn:hover {
   
   
 }
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
 .tall-btn {
   height: 11.5em !important;
   margin-bottom: -6.5em;
