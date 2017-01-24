@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   let  subtract, add, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
-    firstNum = 0, secondNum = 0, total, displayValue, storedOperator, performOperation;
+    firstNum = 0, secondNum = 0, display = $('#display'), total, displayValue, storedOperator, performOperation;
 
   subtract = function(num1, num2) {
     total = Number(num1) - Number(num2);
@@ -33,20 +33,20 @@ $(document).ready(function() {
    };
   
   clear = function() {
+    display.val(0);
     total = 0;
     temp = 0;
     displayValue(total);
   };
   
   allClear = function() {
+    display.val('0');
     total = 0;
     firstNum = 0;
     secondNum = 0;
     displayValue(total);
   };
-  
-  $('.int').click(function() {
-    
+  function addNum () {
     if (temp === 0) {
       temp = $(this).val().toString();
       displayValue(temp);
@@ -54,10 +54,27 @@ $(document).ready(function() {
       temp += $(this).val().toString();
       displayValue(temp);
     }
+  }
+  
+  $('.int').click(function() {
+    
+    addNum();
   });
   
+  display.keypress(function() {
+    if (isNaN($(this).val())) {
+      displayValue(temp);
+    } else {
+      addNum();
+    }
+    //if value is operation
+    //operation = operation value
+    // operator press function
+      
+    
+  });
   $('.operation').click(function() {
-  
+ 
     operation = $(this).val();
     if (firstNum === 0) {
     firstNum = temp;
