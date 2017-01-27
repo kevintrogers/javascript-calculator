@@ -79,11 +79,12 @@ $(document).ready(function() {
   });
   performOperation = function(a, b, operation_type) {
     switch (operation_type) {
-      case '+':
-        total = add(a,b);
-        break;
+
       case '-':
         subtract(a,b);
+        break;
+      case '+':
+        total = add(a,b);
         break;
       case '/':
         divide(a,b);
