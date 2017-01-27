@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  let  subtract, add, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
+  let  subtract, add, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = 0,
     firstNum = 0, secondNum = 0, display = $('#display'), total, displayValue, storedOperator, performOperation;
 
   subtract = function(num1, num2) {
@@ -57,17 +57,19 @@ $(document).ready(function() {
   }
   
   $('.int').click(function() {
-    
-    addNum();
+        if (temp === 0) {
+      temp = $(this).val().toString();
+      displayValue(temp);
+    } else {
+      temp += $(this).val().toString();
+      displayValue(temp);
+    }
   });
 
   
   
- display.keypress(function() {
-    if(display.val() === 0)
-    displayValue('');
-
-      addNum();
+ display.keydown(function() {
+   addNum();
     
     //if value is operation
     //operation = operation value
