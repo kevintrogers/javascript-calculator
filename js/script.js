@@ -1,7 +1,7 @@
 $(document).ready(function() {
 //1-15-2017 calculator working RPN style
   let subtract, add, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
-    firstNum = 0, secondNum = 0, total, display = $('#display'), displayValue, storedOperator, performOperation;
+    setOperation,  operation_arr, firstNum = 0, secondNum = 0, total, display = $('#display'), displayValue, storedOperator, performOperation;
 
   subtract = function(num1, num2) {
     total = Number(num1) - Number(num2);
@@ -44,19 +44,26 @@ $(document).ready(function() {
     secondNum = 0;
     displayValue(total);
   };
+  
    display.keypress(function() {
+     //if value !num check for existence num 1 
+     //store operation value
+     //if no num display val is num 1 else is num 2
+     //perform operation
+     
+    if (operation_arr.indexOf($(this).val().toString()) != -1) 
+    {
+      temp = display.slice(0,-1);
+    }
        
     if (temp === 0) {
 
-      
       temp = $(this).val().toString();
-      
-      return temp;
-      
+
     } else {
   
       temp += $(this).val().toString();
-      return temp;
+
     }
    });
   
@@ -69,10 +76,12 @@ $(document).ready(function() {
       temp += $(this).val().toString();
       displayValue(temp);
     }
-  });
+  }); 
+  
+ //display.keypress()
   
   $('.operation').click(function() {
-  
+
     operation = $(this).val();
     if (firstNum === 0) {
     firstNum = temp;
