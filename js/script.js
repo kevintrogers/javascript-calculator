@@ -1,7 +1,7 @@
 $(document).ready(function() {
 //1-15-2017 calculator working RPN style
   let subtract, add, divide, multiply, calculate, percentage, clear, allClear, plusMinus, temp = '',
-    setOperation,  operation_arr, firstNum = 0, secondNum = 0, total, display = $('#display'), displayValue, storedOperator, performOperation;
+    setOperation,  operation_arr = ['+','-','x','/','='], firstNum = 0, secondNum = 0, total, display = $('#display'), displayValue, storedOperator, performOperation;
 
   subtract = function(num1, num2) {
     total = Number(num1) - Number(num2);
@@ -45,25 +45,37 @@ $(document).ready(function() {
     displayValue(total);
   };
   
-   display.keypress(function() {
+   display.keypress(function(e) {
      //if value !num check for existence num 1 
      //store operation value
      //if no num display val is num 1 else is num 2
      //perform operation
-     
-    if (operation_arr.indexOf($(this).val().toString()) != -1) 
-    {
-      temp = display.slice(0,-1);
-    }
-       
-    if (temp === 0) {
-
-      temp = $(this).val().toString();
-
-    } else {
+             if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+             // Allow: Ctrl/cmd+A
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+             // Allow: Ctrl/cmd+C
+            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+             // Allow: Ctrl/cmd+X
+            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+ 
+      if (temp === 0 && Number.isInteger(parseInt($(this).val(), 10))) {
   
-      temp += $(this).val().toString();
-
+        temp = $(this).val().toString();
+  
+      } else if (Number.isInteger(parseInt($(this).val(), 10))) {
+    
+        temp += $(this).val().toString();
+  
+      
     }
    });
   
