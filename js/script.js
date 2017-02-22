@@ -67,17 +67,18 @@ $(document).ready(function() {
             e.preventDefault();
         }
  
-      if (temp === 0 && Number.isInteger(parseInt($(this).val(), 10))) {
+      if (temp === 0 ) {
   
         temp = $(this).val().toString();
   
-      } else if (Number.isInteger(parseInt($(this).val(), 10))) {
+      } else  {
     
         temp += $(this).val().toString();
   
-      
-    }
-   });
+      }
+   
+    
+    });
   
   $('.int').click(function() {
     
@@ -93,7 +94,10 @@ $(document).ready(function() {
  //display.keypress()
   
   $('.operation').click(function() {
-
+    setOperation();
+  });
+  
+  function setOperation() {
     operation = $(this).val();
     if (firstNum === 0) {
     firstNum = temp;
@@ -106,13 +110,18 @@ $(document).ready(function() {
       displayValue(total);
       storedOperator = operation;
     }
-    
-    
-  });
+  
+  }
+  
   $('.imm-op').click(function() {
+    immOperation();
+  });
+  
+  function immOperation() {
     operation = $(this).val();
     performOperation(firstNum, secondNum, operation);
-  });
+  }
+  
   performOperation = function(a, b, operation_type) {
     switch (operation_type) {
 
