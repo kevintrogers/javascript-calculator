@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
- sass = require('gulp-sass');
- /*watch = require('gulp-watch'),
+  sass = require('gulp-sass');
+/*watch = require('gulp-watch'),
  jshint= require('jshint-stylish'),
 browserSync = require('browser-sync').create(),
  htmlbeautify = require('gulp-html-beautify');
@@ -16,8 +16,8 @@ gulp.task('default', ['watch']);
 gulp.task('build-css', function() {
   return gulp.src('scss/**/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('css/'))
-    
+    .pipe(gulp.dest('css/'));
+
 });
 
 gulp.task('browserSync', function() {
@@ -25,8 +25,8 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: 'app'
     },
-  })
-})
+  });
+});
 
 
 gulp.task('watch', function() {
@@ -40,5 +40,5 @@ gulp.task('htmlbeautify', function() {
   };
   gulp.src('/.*.html')
     .pipe(htmlbeautify(options))
-    .pipe(gulp.dest('./public/'))
+    .pipe(gulp.dest('./public/'));
 });
