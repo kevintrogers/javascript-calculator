@@ -83,39 +83,13 @@ $(document).ready(function() {
     performOperation(firstNum, secondNum, operation);
   });
   performOperation = function(a, b, operation_type) {
-    switch (operation_type) {
-      case '+':
-        total = add(a, b);
-        break;
-      case '-':
-        subtract(a, b);
-        break;
-      case '/':
-        divide(a, b);
-        break;
-      case 'x':
-        multiply(a, b);
-        break;
-      case 'C':
-        clear();
-        break;
-      case 'AC':
-        allClear();
-        break;
-      case '%':
-        percentage();
-        break;
-      case 'plus_minus':
-        plusMinus(temp);
-        break;
-      case '=':
-        displayValue(total);
-        break;
-    }
+    let computationString = a + operation_type + b;
+    total = eval(computationString);
+  
     displayValue(total);
     temp = 0;
     firstNum = total;
-  }
+  };
 
   displayValue = function(value) {
     $('#display').val(value);
